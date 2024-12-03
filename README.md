@@ -43,8 +43,15 @@ diskspd -c200G -w50 -b64K -F4 -r -o128 -W30 -d120 -Sh -D -L testfile.dat
 ## Tests Linux
 
 ```bash
+# write
 sudo fio --runtime 120 --startdelay 30 fiowrite.ini
+
+# read
 sudo fio --runtime 120 --startdelay 30 fioread.ini
+
+# mixed
 sudo fio --runtime 120 --startdelay 30 fioreadwrite.ini
+
+# throughput
 sudo fio --runtime 120 --startdelay 30 fiothroughput.ini
 ```
