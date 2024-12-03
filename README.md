@@ -24,10 +24,7 @@ throughput: 200G, 64k, 128 depth
 
 
 
-## Diskspd tests
-
-
-### Test 1: 4K random read/write
+## Tests Windows
 
 ```bash
 # write
@@ -41,12 +38,13 @@ diskspd -c200G -w50 -b4K -F4 -r -o128 -W30 -d120 -Sh -D -L testfile.dat
 
 # throughput
 diskspd -c200G -w50 -b64K -F4 -r -o128 -W30 -d120 -Sh -D -L testfile.dat
+```
 
+## Tests Linux
 
-## FIO test
-
+```bash
 sudo fio --runtime 120 --startdelay 30 fiowrite.ini
 sudo fio --runtime 120 --startdelay 30 fioread.ini
 sudo fio --runtime 120 --startdelay 30 fioreadwrite.ini
 sudo fio --runtime 120 --startdelay 30 fiothroughput.ini
-
+```
